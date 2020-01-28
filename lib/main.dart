@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
+import './question.dart';
 
 void main() => runApp(MyApp());
 
 class MyApp extends StatefulWidget {
-
   @override
   State<StatefulWidget> createState() {
     return _MyAppState();
@@ -13,8 +13,8 @@ class MyApp extends StatefulWidget {
 class _MyAppState extends State<MyApp> {
   var _questionIndex = 0;
   var questions = [
-      'What\'s your favorite animal?',
-      'What\'s your favorite meal?',
+    'What\'s your favorite animal?',
+    'What\'s your favorite meal?',
   ];
 
   void _answerQuestion() {
@@ -34,23 +34,25 @@ class _MyAppState extends State<MyApp> {
         appBar: AppBar(
           title: Text("My First App"),
         ),
-        body: Column(children: <Widget>[
-          Text(questions.elementAt(_questionIndex)),
-          RaisedButton(
-            child: Text('Answer 1'),
-            onPressed: _answerQuestion,
-          ),
-          RaisedButton(
-            child: Text('Answer 2'),
-            onPressed: () => print('Answer 2 chosen!'),
-          ),
-          RaisedButton(
-            child: Text('Answer 3'),
-            onPressed: () {
-              print('Answer 3 chosen!');
-            },
-          ),
-        ]),
+        body: Column(
+          children: [
+            Question(questions[_questionIndex]),
+            RaisedButton(
+              child: Text('Answer 1'),
+              onPressed: _answerQuestion,
+            ),
+            RaisedButton(
+              child: Text('Answer 2'),
+              onPressed: () => print('Answer 2 chosen!'),
+            ),
+            RaisedButton(
+              child: Text('Answer 3'),
+              onPressed: () {
+                print('Answer 3 chosen!');
+              },
+            ),
+          ],
+        ),
       ),
     );
   }
