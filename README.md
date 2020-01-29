@@ -1,4 +1,6 @@
-# my_app
+# Flutter Basic Example
+
+This is a basic flutter application with simple state management, callbacks for event handling, and widget implementation.
 
 A new Flutter project.
 
